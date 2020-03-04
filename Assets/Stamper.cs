@@ -9,6 +9,7 @@ public class Stamper : MonoBehaviour
     Vector3 currentPos;
     Vector3 mousePos;
     Vector3 stampSize;
+    Quaternion rotation;
     bool canClick = false;
     bool dragStamp = false;
 
@@ -27,6 +28,7 @@ public class Stamper : MonoBehaviour
     {
         stampPos = gameObject.transform.position;
         stampSize = gameObject.transform.localScale;
+        rotation = gameObject.transform.rotation;
     }
 
     void Update()
@@ -39,6 +41,7 @@ public class Stamper : MonoBehaviour
             case DragStates.Free:
                 {
                     gameObject.transform.localScale = stampSize;
+                    gameObject.transform.rotation = rotation;
                     currentPos = gameObject.transform.position;
                     if (currentPos != stampPos)
                     {
@@ -63,6 +66,8 @@ public class Stamper : MonoBehaviour
                 {
                     gameObject.transform.position = mousePos;
                     gameObject.transform.localScale = stampSize * 1.2f;
+                    gameObject.transform.rotation = new Quaternion(0.0f, 0.0f, 90.0f, gameObject.transform.rotation.w);
+
 
                     if (Input.GetMouseButtonDown(0))
                     {
