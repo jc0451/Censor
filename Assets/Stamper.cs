@@ -50,6 +50,7 @@ public class Stamper : MonoBehaviour
                 {
                     //LTextStamp.GetComponent<Button>().interactable = false;
                     //RTextStamp.GetComponent<Button>().interactable = false;
+                    StampSelected = false;
                     gameObject.transform.localScale = stampSize;
                     gameObject.transform.rotation = rotation;
                     currentPos = gameObject.transform.position;
@@ -98,9 +99,12 @@ public class Stamper : MonoBehaviour
 
     public void HasStamped()
     {
-        Vector3 spawnPos = new Vector3(mousePos.x, mousePos.y, -0.6f);
-        Instantiate(stampSprite, spawnPos, Quaternion.identity);
-        hasStamped = true;
-        dragState = DragStates.Free;
+        if (StampSelected)
+        {
+            Vector3 spawnPos = new Vector3(mousePos.x, mousePos.y, -0.6f);
+            Instantiate(stampSprite, spawnPos, Quaternion.identity);
+            hasStamped = true;
+            dragState = DragStates.Free;
+        }
     }
 }
