@@ -87,6 +87,8 @@ public class Stamper : MonoBehaviour
                     //    dragState = DragStates.Free;
                     //}
 
+                    Debug.Log("testpush");
+                    
                     break;
                 }
         }
