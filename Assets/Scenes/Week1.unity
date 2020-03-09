@@ -5897,6 +5897,12 @@ PrefabInstance:
       propertyPath: img
       value: 
       objectReference: {fileID: 812774071}
+    - target: {fileID: 1985563214539783437, guid: 1f035952ceea6c04da16606cec5fbcff,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a31ecc824df3e5b4c9d18527c9bdaccb,
+        type: 3}
     - target: {fileID: 3960878126894424045, guid: 1f035952ceea6c04da16606cec5fbcff,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -6041,6 +6047,12 @@ PrefabInstance:
       propertyPath: img
       value: 
       objectReference: {fileID: 812774071}
+    - target: {fileID: 1631386209079232009, guid: 56932cf1945501c49a663624185ba6e2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1d4559742b6f0d042a65aa9cebf91845,
+        type: 3}
     - target: {fileID: 8340801823807729597, guid: 56932cf1945501c49a663624185ba6e2,
         type: 3}
       propertyPath: m_LocalPosition.x
