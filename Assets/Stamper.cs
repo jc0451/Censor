@@ -14,6 +14,7 @@ public class Stamper : MonoBehaviour
     bool canClick = false;
     bool dragStamp = false;
     bool hasStamped = false;
+    public bool StampSelected = false;
 
     public GameObject stampSprite;
     GameObject LTextStamp;
@@ -73,6 +74,7 @@ public class Stamper : MonoBehaviour
 
             case DragStates.Dragged:
                 {
+                    StampSelected = true;
                     LTextStamp.GetComponent<Button>().interactable = true;
                     RTextStamp.GetComponent<Button>().interactable = true;
                     gameObject.transform.position = mousePos;
@@ -110,6 +112,5 @@ public class Stamper : MonoBehaviour
         Instantiate(stampSprite, spawnPos, Quaternion.identity);
         hasStamped = true;
         dragState = DragStates.Free;
-
     }
 }
