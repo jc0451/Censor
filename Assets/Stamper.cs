@@ -34,8 +34,8 @@ public class Stamper : MonoBehaviour
         stampPos = gameObject.transform.position;
         stampSize = gameObject.transform.localScale;
         rotation = gameObject.transform.rotation;
-        RTextStamp = GameObject.FindGameObjectWithTag("Left Text");
-        LTextStamp = GameObject.FindGameObjectWithTag("Right Text");
+        LTextStamp = GameObject.FindGameObjectWithTag("Left Text");
+        RTextStamp = GameObject.FindGameObjectWithTag("Right Text");
 
     }
 
@@ -81,7 +81,12 @@ public class Stamper : MonoBehaviour
                     gameObject.transform.position = mousePos;
                     gameObject.transform.localScale = stampSize * 1.2f;
                     gameObject.transform.rotation = new Quaternion(0.0f, 0.0f, 90.0f, gameObject.transform.rotation.w);
-                    
+                    if (Input.GetMouseButtonDown(1))
+                    {
+                        dragState = DragStates.Free;
+                    }
+
+
                     break;
                 }
         }
