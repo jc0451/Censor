@@ -178,7 +178,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -189,9 +189,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '
-
-    Credits:'
+  m_Text: "\nCredits:\n\nAndrei Cojanu \u2013 Project Management\r\nLinus de Witt
+    \u2013 Project Management\r\nAndreas Hansen \u2013 Design\r\nTobias Nor\xE9n
+    - Design\r\nAlex Bugnar \u2013 Programming\r\nEmil Dymek \u2013 Programming\r\nAxel
+    Thomsen - Programming\r\nSoundtrack: https://www.youtube.com/watch?v=Uk5zngU-aAE"
 --- !u!222 &476635727
 CanvasRenderer:
   m_ObjectHideFlags: 0
