@@ -48,7 +48,7 @@ public class Shredder : MonoBehaviour
         {
             gameObject.transform.localScale = shredderSize;
         }
-        
+
         if (Stampstate.StampSelected == false)
         {
             if (Input.GetMouseButtonDown(0))
