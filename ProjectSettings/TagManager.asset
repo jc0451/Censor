@@ -7,6 +7,9 @@ TagManager:
   - music
   - Left Text
   - Right Text
+  - Shredder
+  - end
+  - ambient
   layers:
   - Default
   - TransparentFX
