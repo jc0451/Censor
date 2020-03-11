@@ -63,6 +63,10 @@ public class Shredder : MonoBehaviour
                         audioData2.Play(0);
                         Debug.Log("Left Paper selected");
                         leftArticle.transform.localScale = articleSize * 1.05f;
+                        if (shredderSelected == true)
+                        {
+                            ShredLeft();
+                        }
                     }
                     else if (hit.collider.gameObject.tag == "Right Text")
                     {
@@ -70,6 +74,10 @@ public class Shredder : MonoBehaviour
                         audioData2.Play(0);
                         Debug.Log("Right Paper selected");
                         rightArticle.transform.localScale = articleSize * 1.05f;
+                        if (shredderSelected == true)
+                        {
+                            ShredRight();
+                        }
                     }
                     else if (hit.collider.gameObject.tag == "Shredder")
                     {
@@ -78,19 +86,11 @@ public class Shredder : MonoBehaviour
                         shredderSelected = true;
                         if (leftSelected == true)
                         {
-                            
-                            leftArticle.SetActive(false);
-                            Stampstate.HasShredded();
-                            shredder.enabled = false;
-                            PlayParticles();
+                            ShredLeft();
                         }
                         else if (rightSelected == true)
                         {
-                            
-                            rightArticle.SetActive(false);
-                            Stampstate.HasShredded();
-                            shredder.enabled = false;
-                            PlayParticles();
+                            ShredRight();
                         }
                     }
                 }
@@ -103,6 +103,24 @@ public class Shredder : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void ShredLeft()
+    {
+        leftArticle.SetActive(false);
+        Stampstate.HasShredded();
+        shredder.enabled = false;
+        shredderSelected = false;
+        PlayParticles();
+    }
+
+    public void ShredRight()
+    {
+        rightArticle.SetActive(false);
+        Stampstate.HasShredded();
+        shredder.enabled = false;
+        shredderSelected = false;
+        PlayParticles();
     }
 
     public void RightSelect()
