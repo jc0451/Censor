@@ -5,39 +5,79 @@ using UnityEngine;
 public class Shredder : MonoBehaviour
 {
     private Stamper Stampstate;
+    Vector2 mousePos;
+    Vector2 shredderPos;
 
-    GameObject LeftArticle;
-    GameObject RightArticle;
+    GameObject leftArticle;
+    GameObject rightArticle;
 
-    public bool LeftSelected = false;
-    public bool RightSelected = false;
+    public bool leftSelected = false;
+    public bool rightSelected = false;
+    private float timer = 5.0f;
 
     private void Start()
     {
+        leftArticle = GameObject.FindGameObjectWithTag("Left Text");
+        rightArticle = GameObject.FindGameObjectWithTag("Right Text");
         Stampstate = GameObject.Find("Stamper").GetComponent<Stamper>();
-
-        LeftArticle = GameObject.FindGameObjectWithTag("Left Text");
-        RightArticle = GameObject.FindGameObjectWithTag("Right Text");
     }
     private void Update()
     {
-        
+        if (Stampstate.StampSelected == false)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+                if (hit.collider != null)
+                {
+                    if (hit.collider.gameObject.tag == "Left Text")
+                    {
+                        LeftSelect();
+                        Debug.Log("Left Paper selected");
+                    }
+                    else if (hit.collider.gameObject.tag == "Right Text")
+                    {
+                        RightSelect();
+                        Debug.Log("Right Paper selected");
+                    }
+                    else if (hit.collider.gameObject.tag == "Shredder")
+                    {
+                        Debug.Log("Shredder selected");
+                        if (leftSelected == true)
+                        {
+                            leftArticle.SetActive(false);
+                        }
+                        else if (rightSelected == true)
+                        {
+                            rightArticle.SetActive(false);
+                        }
+                    }
+                }
+                else
+                {
+                    Debug.Log("Nothing selected");
+                    rightSelected = false;
+                    leftSelected = false;
+                }
+            }
+        }
     }
 
     public void RightSelect()
     {
         if (Stampstate.StampSelected == false)
         {
-            RightSelected = true;
-            LeftSelected = false;
+            rightSelected = true;
+            leftSelected = false;
         }
     }
     public void LeftSelect()
     {
         if (Stampstate.StampSelected == false)
         {
-            LeftSelected = true;
-            RightSelected = false;
+            leftSelected = true;
+            rightSelected = false;
         }
     }
 }
