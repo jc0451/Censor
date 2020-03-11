@@ -16,12 +16,13 @@ public class Stamper : MonoBehaviour
     bool hasStamped = false;
     bool hasShredded = false;
     public bool StampSelected = false;
-
+    private bool clicked = false;
     public GameObject stampSprite;
     GameObject LTextStamp;
     GameObject RTextStamp;
 
     public GameObject textToPublish;
+    public AudioSource audioData1;
 
     enum DragStates
     {
@@ -79,6 +80,8 @@ public class Stamper : MonoBehaviour
             case DragStates.Dragged:
                 {
                     StampSelected = true;
+                    clicksound();
+
                     //LTextStamp.GetComponent<Button>().interactable = true;
                     //RTextStamp.GetComponent<Button>().interactable = true;
                     gameObject.transform.position = mousePos;
@@ -109,6 +112,16 @@ public class Stamper : MonoBehaviour
     private void OnMouseExit()
     {
         canClick = false;
+        
+    }
+
+    private void clicksound()
+    {
+        if (clicked==false)
+        {
+            audioData1.Play(0);
+            clicked = true;
+        }
     }
 
     public void HasStamped()
