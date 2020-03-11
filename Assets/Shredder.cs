@@ -19,11 +19,12 @@ public class Shredder : MonoBehaviour
     public bool rightSelected = false;
     private float timer = 5.0f;
 
-    AudioSource audioData;
+    public AudioSource audioData1;
+    public AudioSource audioData2;
 
     private void Start()
     {
-        audioData = GetComponent<AudioSource>();
+       
         shredder = GameObject.Find("Shredder").GetComponent<Collider2D>();
         leftArticle = GameObject.FindGameObjectWithTag("Left Text");
         rightArticle = GameObject.FindGameObjectWithTag("Right Text");
@@ -42,11 +43,13 @@ public class Shredder : MonoBehaviour
                     if (hit.collider.gameObject.tag == "Left Text")
                     {
                         LeftSelect();
+                        audioData2.Play(0);
                         Debug.Log("Left Paper selected");
                     }
                     else if (hit.collider.gameObject.tag == "Right Text")
                     {
                         RightSelect();
+                        audioData2.Play(0);
                         Debug.Log("Right Paper selected");
                     }
                     else if (hit.collider.gameObject.tag == "Shredder")
@@ -54,6 +57,7 @@ public class Shredder : MonoBehaviour
                         Debug.Log("Shredder selected");
                         if (leftSelected == true)
                         {
+                            
                             leftArticle.SetActive(false);
                             Stampstate.HasShredded();
                             shredder.enabled = false;
@@ -61,6 +65,7 @@ public class Shredder : MonoBehaviour
                         }
                         else if (rightSelected == true)
                         {
+                            
                             rightArticle.SetActive(false);
                             Stampstate.HasShredded();
                             shredder.enabled = false;
@@ -99,7 +104,7 @@ public class Shredder : MonoBehaviour
     {
         if (!hasPlayed)
         {
-            audioData.Play(0);
+            audioData1.Play(0);
             particles.Play();
             hasPlayed = true;
         }
