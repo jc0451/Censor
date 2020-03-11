@@ -7,6 +7,8 @@ public class Shredder : MonoBehaviour
     private Stamper Stampstate;
     Vector2 mousePos;
     Vector2 shredderPos;
+    Vector3 articleSize;
+    Vector3 shredderSize;
 
     GameObject leftArticle;
     GameObject rightArticle;
@@ -17,7 +19,7 @@ public class Shredder : MonoBehaviour
 
     public bool leftSelected = false;
     public bool rightSelected = false;
-    private float timer = 5.0f;
+    public bool shredderSelected = false;
 
     public AudioSource audioData1;
     public AudioSource audioData2;
@@ -29,9 +31,24 @@ public class Shredder : MonoBehaviour
         leftArticle = GameObject.FindGameObjectWithTag("Left Text");
         rightArticle = GameObject.FindGameObjectWithTag("Right Text");
         Stampstate = GameObject.Find("Stamper").GetComponent<Stamper>();
+        articleSize = leftArticle.transform.localScale;
+        shredderSize = gameObject.transform.localScale;
     }
     private void Update()
     {
+        if (leftSelected == false)
+        {
+            leftArticle.transform.localScale = articleSize;
+        }
+        if (rightSelected == false)
+        {
+            rightArticle.transform.localScale = articleSize;
+        }
+        if (shredderSelected == false)
+        {
+            gameObject.transform.localScale = shredderSize;
+        }
+        
         if (Stampstate.StampSelected == false)
         {
             if (Input.GetMouseButtonDown(0))
@@ -45,16 +62,20 @@ public class Shredder : MonoBehaviour
                         LeftSelect();
                         audioData2.Play(0);
                         Debug.Log("Left Paper selected");
+                        leftArticle.transform.localScale = articleSize * 1.05f;
                     }
                     else if (hit.collider.gameObject.tag == "Right Text")
                     {
                         RightSelect();
                         audioData2.Play(0);
                         Debug.Log("Right Paper selected");
+                        rightArticle.transform.localScale = articleSize * 1.05f;
                     }
                     else if (hit.collider.gameObject.tag == "Shredder")
                     {
+                        gameObject.transform.localScale = shredderSize * 1.05f;
                         Debug.Log("Shredder selected");
+                        shredderSelected = true;
                         if (leftSelected == true)
                         {
                             
@@ -76,6 +97,7 @@ public class Shredder : MonoBehaviour
                 else
                 {
                     Debug.Log("Nothing selected");
+                    shredderSelected = false;
                     rightSelected = false;
                     leftSelected = false;
                 }
