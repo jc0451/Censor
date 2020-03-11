@@ -11,5 +11,8 @@ public class DontDestroy : MonoBehaviour
         if (objs.Length > 1)
             Destroy(this.gameObject);
         DontDestroyOnLoad(this.gameObject);
+
+        GameObject obj = GameObject.FindGameObjectWithTag("ambient");
+        obj.SetActive(true);
     }
 }

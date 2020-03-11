@@ -15,7 +15,7 @@ public class end : MonoBehaviour
     {
         Sent();
         GameObject objs = GameObject.FindGameObjectWithTag("ambient");
-        Destroy(objs);
+        objs.SetActive(false);
         
     }
 
