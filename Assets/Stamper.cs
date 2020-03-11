@@ -83,7 +83,7 @@ public class Stamper : MonoBehaviour
                     //RTextStamp.GetComponent<Button>().interactable = true;
                     gameObject.transform.position = mousePos;
                     gameObject.transform.localScale = stampSize * 1.2f;
-                    gameObject.transform.rotation = new Quaternion(0.0f, 0.0f, 90.0f, gameObject.transform.rotation.w);
+                    //gameObject.transform.rotation = new Quaternion(0.0f, 0.0f, 90.0f, gameObject.transform.rotation.w);
                     if (Input.GetMouseButtonDown(1))
                     {
                         dragState = DragStates.Free;

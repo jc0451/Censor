@@ -10,6 +10,7 @@ public class Shredder : MonoBehaviour
 
     GameObject leftArticle;
     GameObject rightArticle;
+    Collider2D shredder;
 
     public ParticleSystem particles;
     bool hasPlayed = false;
@@ -20,6 +21,7 @@ public class Shredder : MonoBehaviour
 
     private void Start()
     {
+        shredder = GameObject.Find("Shredder").GetComponent<Collider2D>();
         leftArticle = GameObject.FindGameObjectWithTag("Left Text");
         rightArticle = GameObject.FindGameObjectWithTag("Right Text");
         Stampstate = GameObject.Find("Stamper").GetComponent<Stamper>();
@@ -51,12 +53,14 @@ public class Shredder : MonoBehaviour
                         {
                             leftArticle.SetActive(false);
                             Stampstate.HasShredded();
+                            shredder.enabled = false;
                             PlayParticles();
                         }
                         else if (rightSelected == true)
                         {
                             rightArticle.SetActive(false);
                             Stampstate.HasShredded();
+                            shredder.enabled = false;
                             PlayParticles();
                         }
                     }
