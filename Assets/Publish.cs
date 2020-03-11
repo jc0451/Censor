@@ -19,7 +19,7 @@ public class Publish : MonoBehaviour
     {
         targetTime -= Time.deltaTime;
 
-        if (Stampstate.StampSelected == true)
+        //if (Stampstate.StampSelected == true)
         {
             if (targetTime <= 0.0f)
             {

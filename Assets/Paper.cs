@@ -22,8 +22,10 @@ public class Paper : MonoBehaviour
     {
         if (stamper.GetComponent<Stamper>().StampSelected == true && Input.GetMouseButtonDown(0))
         {
+            stamper.GetComponent<Stamper>().textToPublish = toPublish;
             stamper.GetComponent<Stamper>().HasStamped();
-            toPublish.SetActive(true);
         }
     }
+
+
 }

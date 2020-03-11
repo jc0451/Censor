@@ -20,6 +20,8 @@ public class Stamper : MonoBehaviour
     GameObject LTextStamp;
     GameObject RTextStamp;
 
+    public GameObject textToPublish;
+
     enum DragStates
     {
         Dragged,
@@ -90,6 +92,12 @@ public class Stamper : MonoBehaviour
                     break;
                 }
         }
+
+
+        if (hasStamped)
+        {
+            textToPublish.SetActive(true);
+        }
     }
 
     private void OnMouseOver()
@@ -106,9 +114,9 @@ public class Stamper : MonoBehaviour
     {
         if (StampSelected)
         {
+            hasStamped = true;
             Vector3 spawnPos = new Vector3(mousePos.x, mousePos.y, -0.6f);
             Instantiate(stampSprite, spawnPos, Quaternion.identity);
-            hasStamped = true;
             dragState = DragStates.Free;
         }
     }
