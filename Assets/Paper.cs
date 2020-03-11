@@ -24,6 +24,7 @@ public class Paper : MonoBehaviour
         {
             stamper.GetComponent<Stamper>().textToPublish = toPublish;
             stamper.GetComponent<Stamper>().HasStamped();
+            gameObject.GetComponent<Collider2D>().enabled = false;
         }
     }
 

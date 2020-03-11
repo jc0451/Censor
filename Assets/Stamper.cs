@@ -14,6 +14,7 @@ public class Stamper : MonoBehaviour
     bool canClick = false;
     bool dragStamp = false;
     bool hasStamped = false;
+    bool hasShredded = false;
     public bool StampSelected = false;
 
     public GameObject stampSprite;
@@ -63,7 +64,7 @@ public class Stamper : MonoBehaviour
                         gameObject.transform.position = new Vector3(Mathf.Lerp(currentPos.x, stampPos.x, timer / 0.075f), Mathf.Lerp(currentPos.y, stampPos.y, timer / 0.075f), currentPos.z);
                     }
 
-                    if (canClick)
+                    if (canClick && !hasStamped)
                     {
                         if (Input.GetMouseButtonDown(0) && dragStamp == false)
                         {
@@ -94,7 +95,7 @@ public class Stamper : MonoBehaviour
         }
 
 
-        if (hasStamped)
+        if (hasStamped && hasShredded)
         {
             textToPublish.SetActive(true);
         }
@@ -119,5 +120,10 @@ public class Stamper : MonoBehaviour
             Instantiate(stampSprite, spawnPos, Quaternion.identity);
             dragState = DragStates.Free;
         }
+    }
+
+    public void HasShredded()
+    {
+        hasShredded = true;
     }
 }

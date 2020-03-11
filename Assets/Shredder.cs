@@ -11,6 +11,9 @@ public class Shredder : MonoBehaviour
     GameObject leftArticle;
     GameObject rightArticle;
 
+    public ParticleSystem particles;
+    bool hasPlayed = false;
+
     public bool leftSelected = false;
     public bool rightSelected = false;
     private float timer = 5.0f;
@@ -47,10 +50,14 @@ public class Shredder : MonoBehaviour
                         if (leftSelected == true)
                         {
                             leftArticle.SetActive(false);
+                            Stampstate.HasShredded();
+                            PlayParticles();
                         }
                         else if (rightSelected == true)
                         {
                             rightArticle.SetActive(false);
+                            Stampstate.HasShredded();
+                            PlayParticles();
                         }
                     }
                 }
@@ -78,6 +85,15 @@ public class Shredder : MonoBehaviour
         {
             leftSelected = true;
             rightSelected = false;
+        }
+    }
+
+    public void PlayParticles()
+    {
+        if (!hasPlayed)
+        {
+            particles.Play();
+            hasPlayed = true;
         }
     }
 }
