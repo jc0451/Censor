@@ -662,10 +662,10 @@ RectTransform:
   m_Father: {fileID: 1175626261}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.38490024, y: 0.2889552}
-  m_AnchorMax: {x: 0.6180835, y: 0.7958756}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &667753444
 MonoBehaviour:
@@ -680,7 +680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1128,7 +1128,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Close
+  m_Text: Close X
 --- !u!222 &1223255543
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5926,7 +5926,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.00000023841858, y: 0}
-  m_SizeDelta: {x: 160, y: 155.4}
+  m_SizeDelta: {x: 208.5, y: 202.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1438198983
 MonoBehaviour:
@@ -6190,10 +6190,46 @@ PrefabInstance:
       propertyPath: audioData1
       value: 
       objectReference: {fileID: 2070858524}
+    - target: {fileID: 2540825822891498892, guid: c81652885eb227c4da1f90b02504b327,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5eb4470e80546cd41b4d93fa1cd5b0b3,
+        type: 3}
     - target: {fileID: 2540825822891498893, guid: c81652885eb227c4da1f90b02504b327,
         type: 3}
       propertyPath: m_Name
       value: Stamper
+      objectReference: {fileID: 0}
+    - target: {fileID: 2540825822891498894, guid: c81652885eb227c4da1f90b02504b327,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.5832157
+      objectReference: {fileID: 0}
+    - target: {fileID: 2540825822891498894, guid: c81652885eb227c4da1f90b02504b327,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 7.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2540825822891498894, guid: c81652885eb227c4da1f90b02504b327,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 7.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2540825822891498894, guid: c81652885eb227c4da1f90b02504b327,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 5.2411566
+      objectReference: {fileID: 0}
+    - target: {fileID: 2540825822891498894, guid: c81652885eb227c4da1f90b02504b327,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.07952964
+      objectReference: {fileID: 0}
+    - target: {fileID: 2540825822891498894, guid: c81652885eb227c4da1f90b02504b327,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 3.8924391
       objectReference: {fileID: 0}
     - target: {fileID: 2540825822891498895, guid: c81652885eb227c4da1f90b02504b327,
         type: 3}
