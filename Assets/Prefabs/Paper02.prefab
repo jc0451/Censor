@@ -144,6 +144,7 @@ GameObject:
   - component: {fileID: 3960878126894424045}
   - component: {fileID: 5009679945875671804}
   - component: {fileID: 2771119236474527206}
+  - component: {fileID: 226259555}
   m_Layer: 5
   m_Name: Paper02
   m_TagString: Left Text
@@ -160,7 +161,7 @@ RectTransform:
   m_GameObject: {fileID: 1157362658273265765}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.8669217, y: 3.4519572, z: 1}
+  m_LocalScale: {x: 3.3300521, y: 4.009596, z: 1.1615428}
   m_Children:
   - {fileID: 6208574495954435855}
   - {fileID: 754493917779226366}
@@ -198,7 +199,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ad47a32f8cee1344092e6bf383522fb0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a31ecc824df3e5b4c9d18527c9bdaccb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -229,7 +230,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1157362658273265765}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -325,6 +326,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 74.18907, y: 74.218216}
   m_EdgeRadius: 0
+--- !u!114 &226259555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157362658273265765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e761dd3349a09849b8dd0d36a2670b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toPublish: {fileID: 4955046286575035482}
 --- !u!1 &1318784800091131893
 GameObject:
   m_ObjectHideFlags: 0

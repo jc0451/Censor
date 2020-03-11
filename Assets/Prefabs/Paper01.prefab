@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 523415060796130838}
   - component: {fileID: 4117955665719923393}
   - component: {fileID: 7066787079745542728}
+  - component: {fileID: 2007102107}
   m_Layer: 5
   m_Name: Paper01
-  m_TagString: Left Text
+  m_TagString: Right Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +32,7 @@ RectTransform:
   m_GameObject: {fileID: 765751784605859840}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.8669217, y: 3.4519572, z: 1}
+  m_LocalScale: {x: 3.3300521, y: 4.009596, z: 1.1615428}
   m_Children:
   - {fileID: 231551479113266538}
   - {fileID: 2733758862193396390}
@@ -69,7 +70,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ad47a32f8cee1344092e6bf383522fb0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1d4559742b6f0d042a65aa9cebf91845, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -100,7 +101,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765751784605859840}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -196,6 +197,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 74.764175, y: 74.21074}
   m_EdgeRadius: 0
+--- !u!114 &2007102107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765751784605859840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e761dd3349a09849b8dd0d36a2670b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toPublish: {fileID: 3137405554181523883}
 --- !u!1 &3137405554181523883
 GameObject:
   m_ObjectHideFlags: 0
