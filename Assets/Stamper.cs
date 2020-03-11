@@ -84,7 +84,7 @@ public class Stamper : MonoBehaviour
 
                     //LTextStamp.GetComponent<Button>().interactable = true;
                     //RTextStamp.GetComponent<Button>().interactable = true;
-                    gameObject.transform.position = mousePos;
+                    gameObject.transform.position = mousePos + new Vector3(0.0f, 1.0f, 0.0f);
                     gameObject.transform.localScale = stampSize * 1.2f;
                     //gameObject.transform.rotation = new Quaternion(0.0f, 0.0f, 90.0f, gameObject.transform.rotation.w);
                     if (Input.GetMouseButtonDown(1))
