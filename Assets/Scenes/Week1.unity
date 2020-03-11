@@ -6419,6 +6419,11 @@ PrefabInstance:
       propertyPath: img
       value: 
       objectReference: {fileID: 812774071}
+    - target: {fileID: 1359333050555096916, guid: 56932cf1945501c49a663624185ba6e2,
+        type: 3}
+      propertyPath: choice
+      value: Week2B
+      objectReference: {fileID: 0}
     - target: {fileID: 1631386209079232009, guid: 56932cf1945501c49a663624185ba6e2,
         type: 3}
       propertyPath: m_Sprite
